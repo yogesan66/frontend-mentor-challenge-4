@@ -1,6 +1,6 @@
 async function changeQuote() {
     let data = await getQuotes();
-    const advice = document.querySelector('.quote');
+    const advice = document.querySelector('.quote-text');
     const adviceId = document.querySelector('#advice-id');
     if (data.advice && data.id) {
         advice.textContent = data.advice;
