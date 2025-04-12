@@ -1,0 +1,139 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Manrope", sans-serif;
+}
+:root {
+    --blue200: hsl(193, 38%, 86%);
+    --green300: hsl(150, 100%, 66%);
+    --blue600: hsl(217, 19%, 38%);
+    --blue900: hsl(217, 19%, 24%);
+    --blue950: hsl(218, 23%, 16%);
+}
+
+html,body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.main-container {
+    width: 100%;
+    height: 100%;
+    background-color: var(--blue950);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.quote-card {
+    background-color: var(--blue900);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    position: relative;
+}
+
+.heading {
+    color: var(--green300);
+    text-transform: uppercase;
+    display: flex;
+    gap: 0.5rem;
+    letter-spacing: 0.25rem;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.quote {
+    font-size: 28px;
+    width: 27rem;
+    color: var(--blue200);
+    text-align: center;
+    font-weight: 600;
+}
+
+.circle {
+    background-color: var(--green300);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    cursor: pointer;
+    transition: all 0.30s ease-in-out;
+    position: relative;
+}
+
+.circle::after {
+    opacity: 0;
+}
+
+.circle:hover::after {
+    content: '';
+    position: absolute;
+    padding: 1rem;
+    background-color: var(--green300);
+    border-radius: 50%;
+    filter:blur(1.5rem);
+    box-shadow: 0px 0px 0px 12px var(--green300);
+    opacity: 1;
+}
+
+.circle-container {
+    position: absolute;
+    bottom: -32px;
+}
+
+.separator {
+    margin: 0.5rem 0 2rem 0;
+}
+
+.dice {
+    z-index: 99;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin:1rem;
+}
+
+.attribution { font-size: 11px; text-align: center; color: var(--blue200); }
+.attribution a { color: var(--green300); }
+
+.sep-mob {
+    display: none;
+}
+.sep-lap {
+    display: block;
+}
+
+@media screen and (max-width: 540px) {
+    .sep-mob {
+        display: block;
+    }
+    .sep-lap {
+        display: none;
+    }
+    .quote {
+        font-size: 24px;
+        width: 18rem;
+    }
+    .quote-card {
+        padding: 1.5rem;
+    }
+    .heading {
+        margin-top: 0.5rem;
+    }
+    footer {
+        margin: 1rem auto;
+        width: 100vw;
+    }
+}
